@@ -1,0 +1,46 @@
+// SCSS Comment
+/* This is also a comment*/
+// Nesting 
+
+#SYNTAX {
+    h1 {
+        color: red;
+    }
+}
+
+#Nesting {
+    h2 {
+        color: purple;
+    }
+
+    ol {
+        color: red;
+        background-color: black;
+        li {
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            &:hover {
+                color: red;
+                background-color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Interpolation
+
+.main-list {
+    color: red;
+    background-color: blue;
+    #{&}-item {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        &:hover {
+            color: black;
+            cursor: pointer;
+        }
+    }
+}
