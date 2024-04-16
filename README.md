@@ -20,22 +20,29 @@ Def: These statements can only be used at the top level of a stylesheet, or nest
 ### Style Rules
 Def: There are few ways of writing SCSS, using the SASS syntax or the SCSS Syntax
 
-   SCSS                                         SASS
-*circle {                                  *circle 
-    $size:100px;                               $size:100px
-    width: $size;                              width: $size
-    height: $size;                             height: $size
-    border-radius: $size/2;                    border-radius: radius/2
-}                                          
+   SCSS                                     
+*circle {                                  
+    $size:100px;                               
+    width: $size;                              
+    height: $size;                             
+    border-radius: $size/2;                    
+}                         
+
+    SASS
+*circle 
+    $size:100px
+    width: $size
+    height: $size
+    border-radius: radius/2
 
 ### Nesting
 Def: Many CSS properties start with a name prefix that acts as a kind of namespace. For example: font-family, font-size, font-weight all start with prefix font-
 SCSS makes it easier and less redundant by allowing properties declaration to be nested.
 The outer property name are added to the inner, separated by a hyphen. 
 
-*enlarge {                                  *gray {
-    font-size: 14px;                            @include prefix(filter, greyscale(50%), moz webkit);
-    transition: {                            }
+.enlarge {                                  
+    font-size: 14px;                            
+    transition: {                           
         property: font-size;
         duration: 4s;
         delay: 2s;
@@ -45,6 +52,10 @@ The outer property name are added to the inner, separated by a hyphen.
     }
 }
 
+.gray {
+    @include prefix(filter, greyscale(50%), moz webkit);
+}
+    
 ### Interpolation 
 Def: A property's name can include interpolation, which makes it possible to dynamically generate properties as needed. You can even interpolate the entire property name.
 
@@ -55,7 +66,7 @@ Def: A property's name can include interpolation, which makes it possible to dyn
     #{$property}: $value;
 }
 
-*gray {
+.gray {
     @include prefix(filter, grayscale(50), moz webkit);
 }
 
@@ -64,7 +75,7 @@ Def: Sometime you only want a property declaration to show up some of the time. 
 SCSS won't compile that declaration to CSS at all
 
 $round-corners: false;
-* button {
+.button {
     border: 1px solid black;
     border-radius: if($rounded-corners, 5px, null);
 }
