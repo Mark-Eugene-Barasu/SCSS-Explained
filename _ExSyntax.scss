@@ -2,45 +2,45 @@
 /* This is also a comment*/
 // Nesting 
 
-#SYNTAX {
-    h1 {
-        color: red;
-    }
-}
+// #SYNTAX {
+//     h1 {
+//         color: red;
+//     }
+// }
 
-#Nesting {
-    h2 {
-        color: purple;
-    }
+// #Nesting {
+//     h2 {
+//         color: purple;
+//     }
 
-    ol {
-        color: red;
-        background-color: black;
-        li {
-            color: white;
-            font-size: 2rem;
-            text-align: center;
-            &:hover {
-                color: red;
-                background-color: white;
-                cursor: pointer;
-            }
-        }
-    }
-}
+//     ol {
+//         color: red;
+//         background-color: black;
+//         li {
+//             color: white;
+//             font-size: 2rem;
+//             text-align: center;
+//             &:hover {
+//                 color: red;
+//                 background-color: white;
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+// }
 
-// Interpolation
+// // Interpolation
 
-.main-list {
-    color: red;
-    background-color: blue;
-    #{&}-item {
-        color: white;
-        font-size: 2rem;
-        text-align: center;
-        &:hover {
-            color: black;
-            cursor: pointer;
-        }
-    }
-}
+// .main-list {
+//     color: red;
+//     background-color: blue;
+//     #{&}-item {
+//         color: white;
+//         font-size: 2rem;
+//         text-align: center;
+//         &:hover {
+//             color: black;
+//             cursor: pointer;
+//         }
+//     }
+// }

@@ -1,36 +1,15 @@
 /* This is also a comment*/
-#SYNTAX h1 {
+#Variables li {
+  font-size: 32px;
+}
+#Variables li:first-child {
   color: red;
 }
-
-#Nesting h2 {
-  color: purple;
+#Variables li:nth-child(odd) {
+  color: blue;
 }
-#Nesting ol {
+#Variables li:last-child:hover {
   color: red;
-  background-color: black;
-}
-#Nesting ol li {
-  color: white;
-  font-size: 2rem;
-  text-align: center;
-}
-#Nesting ol li:hover {
-  color: red;
-  background-color: white;
-  cursor: pointer;
-}
-
-.main-list {
-  color: red;
-  background-color: blue;
-}
-.main-list .main-list-item {
-  color: white;
-  font-size: 2rem;
-  text-align: center;
-}
-.main-list .main-list-item:hover {
-  color: black;
+  background-color: rgba(0, 0, 255, 0.5);
   cursor: pointer;
 }

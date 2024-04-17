@@ -1,0 +1,29 @@
+// Variables
+// create Variables
+
+$font-s: 32px;
+$primary-color: red;
+$secondary-color: blue;
+
+// Variable in a variable
+
+$bg-color: rgba($secondary-color, 0.5);
+
+#Variables {
+    li {
+        font-size: 32px;
+        &:first-child {
+            color: $primary-color;
+        }
+        &:nth-child(odd){
+            color: $secondary-color;
+        }
+        &:last-child{
+            &:hover {
+                color: $primary-color;
+                background-color: $bg-color;
+                cursor: pointer;
+            } 
+        }
+    }
+}
