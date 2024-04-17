@@ -79,3 +79,16 @@ $round-corners: false;
     border: 1px solid black;
     border-radius: if($rounded-corners, 5px, null);
 }
+
+### Default Values
+Def: Normally when you assign a value to a variable, if that variable already has a value, its old value is overwritten. To make this possible, SCSS provides the !default flag. This assigns a value to a variable only if that variable is not defined or its value is null. Otherwise, the existing value will be used.
+
+using the !default.
+$white: #fff !default
+$black: #000 !default
+
+Variables
+$border-radius: 0.2rem !default;
+$border-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+
+so, from here you can resign the same variable and the values you assign them will take presidency over the same variable name with the !default flag.

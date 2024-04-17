@@ -1,15 +1,27 @@
 /* This is also a comment*/
+.default {
+  border: 1px solid blue;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+}
+
 #Variables li {
   font-size: 32px;
 }
 #Variables li:first-child {
   color: red;
 }
-#Variables li:nth-child(odd) {
-  color: blue;
+#Variables li:nth-child(even) {
+  color: rgba(27, 50, 155, 0.8);
 }
 #Variables li:last-child:hover {
   color: red;
-  background-color: rgba(0, 0, 255, 0.5);
+  background-color: rgba(27, 50, 155, 0.8);
   cursor: pointer;
+}
+
+.default {
+  border: 1px solid blue;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
 }

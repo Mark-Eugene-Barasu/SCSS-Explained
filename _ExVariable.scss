@@ -1,29 +1,31 @@
 // Variables
 // create Variables
+@import "./library";
 
 $font-s: 32px;
 $primary-color: red;
-$secondary-color: blue;
+$secondary-color: rgba(27, 50, 155, 0.8);
 
-// Variable in a variable
+// Variabe in a Variable
 
-$bg-color: rgba($secondary-color, 0.5);
+$bg-color: rgba($secondary-color, 0.8);
 
 #Variables {
     li {
-        font-size: 32px;
+        font-size: $font-s;
         &:first-child {
             color: $primary-color;
         }
-        &:nth-child(odd){
+        &:nth-child(even) {
             color: $secondary-color;
         }
         &:last-child{
-            &:hover {
+            &:hover{
                 color: $primary-color;
                 background-color: $bg-color;
                 cursor: pointer;
-            } 
+            }
         }
     }
 }
+
