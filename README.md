@@ -108,98 +108,98 @@ button {
 Def: Variables declared at the top level of a stylesheet are global. This means that they can be accessed anywhere in their module after they've been declared. But that's not true for all variables. Those declared in blocks.
 
 SCSS
-$global-variable: global value;
+    $global-variable: global value;
 
-.header{
-    $local-variable: local value;
-    global: $global-variable;
-    local; $local-variable;
-}
-.main {
-    global: $global-variable:
-}
+    .header{
+        $local-variable: local value;
+        global: $global-variable;
+        local; $local-variable;
+    }
+    .main {
+        global: $global-variable:
+    }
 
 CSS
-.header {
-    global: global value;
-    local: local value;
-}
+    .header {
+        global: global value;
+        local: local value;
+    }
 
-.main {
-    global: global value;
-}
+    .main {
+        global: global value;
+    }
 
 ### Shadowing 
 Def: Local variables can even be declared with the same name as a global variable. If this happens, there are actually two different variables with the same name: one local and one global. This helps ensure that an author writing a local variable doesn't accidentally change the value of a global variable they aren't even aware of.
 
-                without !global yet
+without !global yet
 SCSS
-$variable: global value;
+    $variable: global value;
 
-.header{
-    $variable: local value;
-    value: $variable;
-}
-.main {
-    value: $variable;
-}
+    .header{
+        $variable: local value;
+        value: $variable;
+    }
+    .main {
+        value: $variable;
+    }
 
 CSS
-.header {
-    value: local value;
-}
-.main {
-    value: global value;
-}
+    .header {
+        value: local value;
+    }
+    .main {
+        value: global value;
+    }
 
 Def: !global flag. A variable declaration flagged as !global will always assign to the global scope.
 
-            now with !global
+now with !global
 SCSS
-$variable: first global value;
+    $variable: first global value;
 
-.header {
-    $variable: second global value !global;
-    value: $variable;
-}
+    .header {
+        $variable: second global value !global;
+        value: $variable;
+    }
 
-.main {
-    value: $variable;
-}
+    .main {
+        value: $variable;
+    }
 
 CSS
-.header {
-    value: $second global value;
-}
+    .header {
+        value: $second global value;
+    }
 
-.main {
-    value: $second global value;
-}
+    .main {
+        value: $second global value;
+    }
 
 ### Flow Control
 Def: Variables declared in flow control rules have special scoping rules: they don't shadow variables at the same level as the flow control rule. Instead, they just assign to those variables. This makes it much easier to conditionally assign a value to a variable, or build up a value as part of a loop. 
 
 SCSS
-$dark-theme: true !default;
-$primary-color: #f8bbd0 !default;
-$accent-color: #6a1b9a !default;
+    $dark-theme: true !default;
+    $primary-color: #f8bbd0 !default;
+    $accent-color: #6a1b9a !default;
 
-@if $dark-theme {
-    $primary-color: darken($primary-color, 60%);
-    $accent-color: lighten($accent-color, 60%);
-}
-.button {
-    background-color: $primary-color;
-    border: 1px solid $accent-color;
-    border-radius: 3px;
-}
+    @if $dark-theme {
+        $primary-color: darken($primary-color, 60%);
+        $accent-color: lighten($accent-color, 60%);
+    }
+    .button {
+        background-color: $primary-color;
+        border: 1px solid $accent-color;
+        border-radius: 3px;
+    }
 
 CSS
-.button {
-    background-color: #750c30;
-    border: 1px solid #f5ebfc;
-    border-radius: 3px;
-}
-.main {
-    value: global value;
-}
+    .button {
+        background-color: #750c30;
+        border: 1px solid #f5ebfc;
+        border-radius: 3px;
+    }
+    .main {
+        value: global value;
+    }
