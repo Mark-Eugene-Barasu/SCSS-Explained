@@ -20,7 +20,8 @@ Def: These statements can only be used at the top level of a stylesheet, or nest
 ### Style Rules
 Def: There are few ways of writing SCSS, using the SASS syntax or the SCSS Syntax
 
-SCSS                                     
+SCSS    
+
     .circle {                                  
         $size:100px;                               
         width: $size;                              
@@ -29,6 +30,7 @@ SCSS
     }                         
 
 SASS
+
     .circle 
         $size:100px
         width: $size
@@ -88,12 +90,14 @@ Def: Normally when you assign a value to a variable, if that variable already ha
     $black: #000 !default
 
 Variables
+
     $border-radius: 0.2rem !default;
     $border-shadow: 0 0.5rem 1rem rgba($black, 0.15)!default;
 
 so, from here you can resign the same variable and the values you assign them will take presidency over the same variable name with the !default flag.
 
 Call the Variables in SCSS
+
     button {
         border-radius: $border-radius;
         box-shadow: $box-shadow;
@@ -108,6 +112,7 @@ Call the Variables in SCSS
 Def: Variables declared at the top level of a stylesheet are global. This means that they can be accessed anywhere in their module after they've been declared. But that's not true for all variables. Those declared in blocks.
 
 SCSS
+
     $global-variable: global value;
 
     .header{
@@ -120,6 +125,7 @@ SCSS
     }
 
 CSS
+
     .header {
         global: global value;
         local: local value;
@@ -134,6 +140,7 @@ Def: Local variables can even be declared with the same name as a global variabl
 
 without !global yet
 SCSS
+
     $variable: global value;
 
     .header{
@@ -145,6 +152,7 @@ SCSS
     }
 
 CSS
+
     .header {
         value: local value;
     }
@@ -156,6 +164,7 @@ Def: !global flag. A variable declaration flagged as !global will always assign 
 
 now with !global
 SCSS
+
     $variable: first global value;
 
     .header {
@@ -168,6 +177,7 @@ SCSS
     }
 
 CSS
+
     .header {
         value: $second global value;
     }
@@ -180,6 +190,7 @@ CSS
 Def: Variables declared in flow control rules have special scoping rules: they don't shadow variables at the same level as the flow control rule. Instead, they just assign to those variables. This makes it much easier to conditionally assign a value to a variable, or build up a value as part of a loop. 
 
 SCSS
+
     $dark-theme: true !default;
     $primary-color: #f8bbd0 !default;
     $accent-color: #6a1b9a !default;
@@ -195,6 +206,7 @@ SCSS
     }
 
 CSS
+
     .button {
         background-color: #750c30;
         border: 1px solid #f5ebfc;
