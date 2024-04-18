@@ -38,6 +38,47 @@
   box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.3);
 }
 
+#Scope li {
+  font-weight: 900;
+  color: red;
+}
+#Scope li:first-child {
+  color: green;
+}
+#Scope li:nth-child(2) {
+  color: rgba(27, 50, 155, 0.8);
+  color: green;
+}
+
+.Shadowing p {
+  font-size: 2rem;
+}
+.Shadowing p:first-child {
+  color: green;
+  font-weight: 500;
+}
+.Shadowing p:nth-child(2) {
+  color: blue;
+  font-weight: 500;
+}
+.Shadowing p:last-child {
+  color: blue;
+  font-weight: 500;
+}
+
+.Flow p {
+  background-color: #000004;
+  border-radius: 5px solid #e0c0f4;
+  color: #ff3333;
+  border-radius: 3px;
+  font-size: 2rem;
+}
+.Flow p:first-child {
+  background-color: black;
+  border: 5px solid #e0c0f4;
+  color: #ff3333;
+}
+
 .default {
   border: 1px solid red;
   border-radius: 10px;

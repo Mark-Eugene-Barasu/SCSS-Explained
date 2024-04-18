@@ -6,7 +6,7 @@ $font-s: 32px;
 $primary-color: red;
 $secondary-color: rgba(27, 50, 155, 0.8);
 
-// Variabe in a Variable
+// Variable in a Variable
 
 $bg-color: rgba($secondary-color, 0.8);
 
@@ -48,6 +48,87 @@ $bg-color: rgba($secondary-color, 0.8);
             background-color: $default-c;
             cursor: pointer;
             box-shadow: $box-shadow;
+        }
+    }
+}
+
+// Scope
+$font-normal:200;
+$font-bold:900;
+$scope: green;
+
+#Scope {
+    li{
+        font-weight: $font-bold;
+        color: $primary-color;
+        &:first-child{
+            $scope: green;
+            color: $scope;
+        }
+        &:nth-child(2){
+            color: $secondary-color;
+            color: $scope;
+        }
+    }
+}
+
+// Shadowing
+
+$bold: 900;
+$color: red;
+
+.Shadowing {
+    p{
+        font-size: 2rem;
+        &:first-child{
+            color: green;
+            $bold: 500 !global;
+            font-weight: $bold;
+        }
+        &:nth-child(2){
+            $color: blue !global;
+            color: $color;
+            font-weight: $bold;
+        }
+        &:last-child{
+            color: $color;
+            font-weight: $bold;
+        }
+    }
+}
+
+// Flow Control Scope
+
+$dark-theme: true !default;
+$primary-color: #3f4bf7;
+$accent-color: #6a1b9a;
+$text-color: red !default;
+
+@if $dark-theme{
+    $primary-color: darken($primary-color, 60%);
+    $accent-color: lighten($accent-color, 50%);
+    $text-color: lighten($text-color, 10%);
+}
+.Flow {
+    p {
+        background-color: $primary-color;
+        border-radius: 5px solid $accent-color;
+        color: $text-color;
+        border-radius: 3px;
+        font-size: 2rem;
+        &:first-child{
+            $dark-theme: false;
+            $primary-color: #3f4bf7;
+            $accent-color: #6a1b9a;
+            $text-color: red !default;
+            @if dark-theme{
+                $primary-color: darken($primary-color, 80%);
+                $accent-color: lighten($accent-color, 50%);
+                $text-color: lighten($text-color, 50%);
+            }
+            background-color: $primary-color;
+            border: 5px solid $accent-color;
+            color: $text-color;
         }
     }
 }
