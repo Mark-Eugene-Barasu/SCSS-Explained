@@ -89,6 +89,6 @@ $black: #000 !default
 
 Variables
 $border-radius: 0.2rem !default;
-$border-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+$border-shadow: 0 0.5rem 1rem rgba($black, 0.15)!default;
 
 so, from here you can resign the same variable and the values you assign them will take presidency over the same variable name with the !default flag.

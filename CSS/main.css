@@ -1,8 +1,8 @@
 /* This is also a comment*/
 .default {
-  border: 1px solid blue;
+  border: 1px solid red;
   border-radius: 10px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.3);
 }
 
 #Variables li {
@@ -20,8 +20,26 @@
   cursor: pointer;
 }
 
+#Default li.default {
+  font-size: 32px;
+}
+#Default li.default:first-child {
+  color: red;
+  color: red;
+}
+#Default li.default:nth-child(even) {
+  color: rgba(27, 50, 155, 0.8);
+  color: green;
+}
+#Default li.default:last-child:hover {
+  color: rgba(27, 50, 155, 0.8);
+  background-color: green;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.3);
+}
+
 .default {
-  border: 1px solid blue;
+  border: 1px solid red;
   border-radius: 10px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.3);
 }
