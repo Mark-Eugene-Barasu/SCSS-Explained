@@ -215,3 +215,20 @@ CSS
     .main {
         value: global value;
     }
+
+### Advanced Variable Functions
+Def: The SCSS core library provides a couple advanced functions for working with variables. The meta.variable.exists() function returns whether a variable with the given name exists in the current scope and the meta.global.variable.exists() function does the same but only for the global scope. 
+
+SCSS
+
+@use "scss:map";
+
+$theme-color:(
+    "success": #28a745,
+    "info": #17a2b8,
+    "warning": #ffc107,
+);
+
+.button {
+    background-color: map-get($map: $theme-color, $key: warning);
+}

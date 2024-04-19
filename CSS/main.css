@@ -79,6 +79,22 @@
   color: #ff3333;
 }
 
+.Advanced p {
+  font-size: 2rem;
+}
+.Advanced p:first-child {
+  background-color: green;
+  color: white;
+}
+.Advanced p:nth-child(2) {
+  background-color: lightblue;
+  color: black;
+}
+.Advanced p:last-child {
+  background-color: red;
+  color: rgb(192, 138, 38);
+}
+
 .default {
   border: 1px solid red;
   border-radius: 10px;

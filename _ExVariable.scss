@@ -132,3 +132,35 @@ $text-color: red !default;
         }
     }
 }
+
+// Advance Variable Function
+
+$theme-color:(
+    "success": green,
+    "info": lightblue,
+    "warning": red
+);
+
+$color: (
+    "light": rgb(192, 138, 38),
+    "dark": black,
+    "whittte": white,
+);
+
+.Advanced {
+    p {
+        font-size: 2rem;
+        &:first-child{ 
+            background-color: map-get($map: $theme-color, $key: success);
+            color: map-get($map: $color, $key: whittte);
+        }
+        &:nth-child(2){
+            background-color: map-get($map: $theme-color, $key: info);
+            color: map-get($map: $color, $key: dark);
+        }
+        &:last-child{
+            background-color: map-get($map: $theme-color, $key: warning);
+            color: map-get($map: $color, $key: light);
+        }
+    }   
+}
