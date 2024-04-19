@@ -221,14 +221,14 @@ Def: The SCSS core library provides a couple advanced functions for working with
 
 SCSS
 
-@use "scss:map";
+    @use "scss:map";
 
-$theme-color:(
-    "success": #28a745,
-    "info": #17a2b8,
-    "warning": #ffc107,
-);
+    $theme-color:(
+        "success": #28a745,
+        "info": #17a2b8,
+        "warning": #ffc107,
+    );
 
-.button {
-    background-color: map-get($map: $theme-color, $key: warning);
-}
+    .button {
+        background-color: map-get($map: $theme-color, $key: warning);
+    }
