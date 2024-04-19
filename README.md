@@ -232,3 +232,5 @@ SCSS
     .button {
         background-color: map-get($map: $theme-color, $key: warning);
     }
+
+## SCSS Data Types 
