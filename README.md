@@ -332,3 +332,28 @@ Merge Maps
         background-color: map-get($both_together, light);
     }
 
+### Booleans
+Def: Booleans are the logical values true and false. 
+In addition their literal forms, booleans are returned by equality and relational operators.
+
+Using Booleans
+You can use Booleans to choose whether or not to do various things in SCSS.
+The @if rule evaluates a block of styles if its arguments is true: 
+
+    @mixin avatar($size, $circle: false){
+        width: $size;
+        heigh: $size;
+        @if $circle {
+            border-radius: $size / 2;
+        }
+    }
+
+    .square-av {
+        background-color: red;
+        @include avatar(100px, $circle: false);
+    }
+
+    .circle-av {
+        background-color: blue;
+        @include avatar(100px, $circle: true);
+    }

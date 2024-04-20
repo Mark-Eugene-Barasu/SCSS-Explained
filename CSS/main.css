@@ -236,3 +236,24 @@
   background-color: darkred;
   color: lightblue;
 }
+
+.square {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+.circle {
+  background-color: blue;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+
+.container {
+  color: #ff3333;
+  background-color: black;
+  padding: 1.5833333333rem;
+  margin: 2.28rem;
+  font-size: 3.9rem;
+}

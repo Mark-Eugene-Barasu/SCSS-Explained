@@ -172,3 +172,37 @@ $bg_and_text_color-map:map-merge($background-color-map, $blue-color-map);
         }
     }
 }
+
+//Booleans 
+
+@mixin avatar($size, $circle: true) {
+    width: $size;
+    height: $size;
+    @if $circle{
+        border-radius: $size / 2;
+    }
+}
+
+.square {
+    background-color: red;
+    @include avatar(100px, false);
+}
+.circle {
+    background-color: blue;
+    @include avatar(150px, true);
+}
+
+// null
+
+$variable: null;
+$color: red;
+$variable: 1.5rem;
+
+.container {
+    color: lighten($color, 10%);
+    background-color: darken($color, 80%);
+    $variable: 1.9rem;
+    padding: $variable / 1.2;
+    margin: $variable * 1.2;
+    font-size: $variable + 2 ;
+}
