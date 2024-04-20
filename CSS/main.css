@@ -100,3 +100,139 @@
   border-radius: 10px;
   box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.3);
 }
+
+#Numbers .Numbers-list li:first-child {
+  font-weight: 700;
+  font-size: 32px;
+}
+#Numbers .Numbers-list li:nth-child(2) {
+  font-size: 32.5px;
+  border: 2.5px solid red;
+}
+#Numbers .Numbers-list li:nth-child(3) {
+  font-size: 18px;
+  border: 2.5px solid blue;
+  border-radius: 20%;
+  padding-top: 25%;
+}
+#Numbers .Numbers-list li:nth-child(4) {
+  font-size: 32.9px;
+  border: 0.3em dotted #831483;
+}
+#Numbers .Numbers-list li:nth-child(4) span:first-child {
+  font-size: 2em;
+  font-weight: 700;
+}
+#Numbers .Numbers-list li:nth-child(4) span:last-child {
+  font-weight: 900;
+  font-size: 3.1rem;
+}
+
+#String .String-list {
+  font-size: 1.1rem;
+}
+#String .String-list li:first-child {
+  font-family: "Helvetica";
+}
+#String .String-list li:nth-child(2) {
+  font-family: "Time New Roman";
+}
+#String .String-list li:nth-child(3) {
+  font-weight: bold;
+  font-family: "Helvetica";
+}
+#String .String-list li:last-child span:first-child {
+  font-family: "Helveticasan-serif";
+}
+#String .String-list li:last-child span:last-child {
+  font-family: sans-serif;
+}
+
+#Colors .Colors-list {
+  font-size: 1.5rem;
+}
+#Colors .Colors-list li:first-child {
+  color: red;
+}
+#Colors .Colors-list li:nth-child(2) {
+  color: red;
+  background-color: #444;
+}
+#Colors .Colors-list li:nth-child(3) {
+  background-color: rgb(25, 16, 30);
+  color: rgb(103, 28, 143);
+}
+#Colors .Colors-list li:nth-child(4) {
+  background-color: rgba(25, 16, 30, 0.55);
+}
+#Colors .Colors-list li:nth-child(4) span:first-child {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+#Colors .Colors-list li:nth-child(4) span:last-child {
+  background-color: rgba(68, 68, 68, 0.2);
+}
+
+.list-item-2rem {
+  font-size: 2rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.list-item-3rem {
+  font-size: 3rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.list-item-4rem {
+  font-size: 4rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+.list-item-5rem {
+  font-size: 5rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.Maps-list .list-item {
+  font-size: 1.5rem;
+}
+.Maps-list .list-item:first-child {
+  color: lightblue;
+}
+.Maps-list .list-item:nth-child(2) {
+  color: blue;
+}
+.Maps-list .list-item:nth-child(3) {
+  color: darkblue;
+}
+.Maps-list .list-item:nth-child(4) {
+  color: red;
+  background-color: pink;
+}
+.Maps-list .list-item:nth-child(5) {
+  color: blue;
+  background-color: red;
+}
+.Maps-list .list-item:nth-child(6) {
+  background-color: darkred;
+  color: lightblue;
+}

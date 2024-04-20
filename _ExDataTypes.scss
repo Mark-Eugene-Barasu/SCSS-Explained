@@ -1,0 +1,174 @@
+// Numbers
+
+#Numbers {
+    .Numbers-list{
+        li{
+            &:first-child{
+                font-weight: 700;
+                font-size: 32px;
+            }
+            &:nth-child(2){
+                font-size: 32.5px;
+                border: 2.5px solid red;
+            }
+            &:nth-child(3){
+                font-size: 18px;
+                border: 2.5px solid blue;
+                border-radius: 20%;
+                padding-top: 25%;
+            }
+            &:nth-child(4){
+                font-size: 32.9px;
+                border: 0.3em dotted #831483;// up to 10 decimals
+                span{
+                    &:first-child{
+                        font-size: 2em;
+                        font-weight: 700;
+                    }
+                    &:last-child{
+                        font-weight: 900;
+                        font-size: 3.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Strings
+// Normal Strings
+$string_1: "Helvetica";
+$string_2: 'Time New Roman';
+
+// Escapes "\"
+$string_3: bold;
+$string_4: $string_1 + 'san-serif';
+
+#String {
+    .String-list {
+        font-size: 1.1rem;
+        li{
+            &:first-child{
+                font-family: $string_1;
+            }
+            &:nth-child(2){
+                font-family: $string_2;
+            }
+            &:nth-child(3){
+                font-weight: $string_3;
+                font-family: $string_1; 
+            }
+            &:last-child{
+                span{
+                    &:first-child{
+                        font-family: $string_4;
+                    }
+                    &:last-child{
+                        font-family: sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}
+// Colors
+
+$name: red;
+$hexa: #444;
+$rgb: rgb(25, 16, 30);
+
+#Colors {
+    .Colors-list{
+        font-size: 1.5rem;
+        li{
+            &:first-child{
+                color: $name;
+            }
+            &:nth-child(2){
+                color: $name;
+                background-color: $hexa;
+            }
+            &:nth-child(3){
+                background-color: $rgb;
+                $rgb: rgb(103, 28, 143);
+                color: $rgb;
+            }
+            &:nth-child(4){
+                background-color: rgba($rgb, 0.55);
+                span{
+                    &:first-child{
+                        background-color: rgba($name, 0.7);
+                    }
+                    &:last-child{
+                        background-color: rgba($hexa, 0.2);
+                    }
+                }
+            }
+        }
+    }
+}
+// List 
+
+$list-1: 2rem, 3rem, 4rem;
+$bg-c: green, blue, red; 
+
+// to append/add to a list
+$list-1:append($list-1, 5rem );
+$bg-c:append($bg-c, yellow);
+
+@each $size in $list-1{
+    .list-item-#{$size}{
+        font-size: $size;
+        height: $size;
+        width: $size;
+    }
+}
+@each $bg in $bg-c {
+    .bg-#{$bg}{
+        background-color: $bg;
+    }
+}
+
+// Maps
+
+$blue-color-map:(
+    "light": lightblue,
+    "medium": blue,
+    "hard": darkblue
+);
+
+$background-color-map:(
+    "bg-light": pink,
+    "bg-medium": red,
+    "bg-hard": darkred
+);
+
+// how to merge maps
+$bg_and_text_color-map:map-merge($background-color-map, $blue-color-map);
+
+.Maps-list{
+    .list-item{
+        font-size: 1.5rem;
+        &:first-child{
+            color: map-get($blue-color-map, light );
+        }
+        &:nth-child(2){
+            color: map-get($blue-color-map, medium );
+        }
+        &:nth-child(3){
+            color: map-get($blue-color-map, hard );
+        }
+        &:nth-child(4){
+            color: map-get($background-color-map, bg-medium );
+            background-color: map-get($background-color-map, bg-light);
+        }
+        &:nth-child(5){
+            color: map-get($bg_and_text_color-map, medium );
+            background-color: map-get($background-color-map, bg-medium );
+        }
+        &:nth-child(6){
+            background-color: map-get($background-color-map, bg-hard);
+            color: map-get($bg_and_text_color-map, light );
+        }
+    }
+}

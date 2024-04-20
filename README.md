@@ -234,3 +234,101 @@ SCSS
     }
 
 ## SCSS Data Types 
+*Numbers
+*Strings
+*Colors
+*Lists
+*Maps
+*Booleans
+*null
+
+### Numbers
+Def: Numbers in SCSS have two components: the number itself, and its units, For example, in 16px the number is 16 and the unit is px. Numbers can have no units, and they can have complex units.
+
+    $font-size: (
+        "normal": 100,
+        "decimal": 0.9,
+        "percentage": 10%,
+        "pxValues": 16px, 1em, 1rem
+    );
+
+Units
+
+    real-world units calculations
+
+Precision
+
+    up to 10 digits of precision
+
+
+### Strings
+Def: Strings are sequences of characters (specially Unicode code points). SCSS supports two kinds of strings whose internal structure is the same but which are rendered differently: quoted strings like "Helvetica Neve", and unquoted strings(also known as identifiers), like bold. Together, those cover the different kinds of text that appear in CSS.
+
+Escapes
+Def: All SCSS strings support the standard CSS escape code:
+
+    "\"
+    "line1 \a line2"
+
+Quoted
+Def: Quoted strings are written between either single or double quotes, as in "Helvetica Neve". They can contain interpolation, as well as any unescaped character except for: 
+
+    "Helvetica Neve"
+
+### Colors
+Def: SCSS has built-in support for color values. Just like CSS colors, they represent points in the RGB color space. SCSS colors can be written as hex code(#f2ece4 or #b37399aa), CSS color names (midnightblue, transparent), or the function rgb(), rgba(), hls(), and hlsa()
+
+    $colors:(
+        "named": red,
+        "specific-named": midnightblue,
+        "hexadecimal": #fff,
+        "hexadecimal_alpha": #b37399aa,
+        "red, green, blue": rgb(204, 102, 153),
+        "red, green, blue, alpha": rgba(107, 113, 127, 0.8)
+    );
+
+### List
+Def: List contain a sequence of other values. In SCSS elements in list can be separated by commas (Helvetica, Arial, sans-serif) or by spaces (10px 15px 0 0 ), as long as its consistent within the list. Unlike most other languages, list in SCSS don't require special brackets: any expressions separated with spaces or commas counts as a list. HOwever, you are allowed to write list with square brackets ([line1 line2]), which is useful when using grid-template-columns.
+
+Indexes
+Def: Indexes refer to the elements in a list. The index 1 indicate the first elements of the list. The index -1 refers to the last elements of the list, -2 refers to the second-to-last, and so on.
+
+Access an Element
+Def: You can use the list.nth($list, $n) function to get the element at a given index in a list, The first argument is the list itself, and the second is the index of the value you want to get out.
+
+### Maps
+Def: Maps in SCSS hold pairs of keys and values.
+
+Look Up a Value
+
+    $font-weights: (
+        "regular": 400,
+        "medium": 500,
+        "bold": 700
+    );
+
+    p{
+        background-color: map-get($font-weight, medium);
+    }
+
+Merge Maps
+
+    // first Map
+    $light-weight: (
+        "lightest": 100,
+        "light": 300
+    );
+
+    // Second Map
+    $heavy-weight: (
+        "medium": 500,
+        "bold": 700
+    );
+
+    // merging first and second maps
+    $both_together: map-merge($light-weight, $heavy-weight);
+
+    p{
+        background-color: map-get($both_together, light);
+    }
+
