@@ -449,3 +449,67 @@ Def: Unlike languages like JavaScript, SCSS uses words rather than symbols for i
     @debug true and true; // true
     @debug true and false; // false
 
+## SCSS Flow Control Overview
+* @if and @else
+* @each
+* @for
+* @while
+
+they can be used in @mixin and @function
+
+
+### @if and @else
+Def: The @if rule controls whether or not its block gets evaluated(including emitting any styles as CSS). The expression usually returns either true or false - if the expression returns true, the block is evaluated, and if the expression returns false it's not.
+
+@if
+rule is written
+
+    @if expression {
+        //...
+    }
+
+@else if
+You can also choose whether to evaluate an @else rule's block by writing
+
+    @else if expression {
+        //...
+    }
+
+is evaluated only if the preceding @ifs expression returns false and the @else if's expression returns true
+
+@else
+An @if rule can optionally be followed by an @else rule, written:
+
+    @else {
+        //...
+    }
+
+evaluated if the @if expression returns false.
+
+### @each
+Def: The @each rule makes it easy to emit styles or evaluate code for each element of a list or each pair in a map. It's great for repetitive styles that only have a few variations between them. 
+
+@each
+The rule is written: 
+
+    @each $var in expression {
+        //...
+    }
+
+where the expression returns a list. The block is evaluated for each element of the list in turn, which is assigned to the given variable name.
+
+With Map
+You can also use @each to iterate over every key/value pair in a map by writing i;
+
+    @each variable, variable in expression {
+        //...
+    }
+
+The key is assigned to the first variable name, and element is assigned to the second.
+
+Destructuring
+if you have a list of lists, you can use @each to automatically assign variables to each of the values from the inner lists by writing it: 
+
+    @each variable... in expression {
+        //...
+    }
