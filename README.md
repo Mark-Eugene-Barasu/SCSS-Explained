@@ -358,7 +358,7 @@ The @if rule evaluates a block of styles if its arguments is true:
         @include avatar(100px, $circle: true);
     }
 
-### Null 
+### null
 Def: The value null is the only value of its type. It represents the absence of a value, and is often returned by functions to indicate the lack of a result.
 
 If a list contains a null, that null is omitted from the generated CSS. 
