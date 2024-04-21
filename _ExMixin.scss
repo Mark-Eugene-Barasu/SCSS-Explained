@@ -1,0 +1,19 @@
+// Mixins
+
+// @mixin Mixin_name {
+
+// }
+
+@mixin FlexMix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Mixin {
+    ul{
+        a{
+            list-style: none;
+        }
+    }
+}
