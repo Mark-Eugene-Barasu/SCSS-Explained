@@ -513,3 +513,35 @@ if you have a list of lists, you can use @each to automatically assign variables
     @each variable... in expression {
         //...
     }
+
+This is known as destructuring, since the variables match the structure of the inner lists. Each variable name is assigned to the value at the corresponding position in the list, or null if the list doesn't have enough values.
+
+### @for
+Def: The @for rule, counts up or down from one number (the result of the first expression) to another (the result of the second) and evaluated a block for each number in between, Each number along teh way is assigned to the given variable name. 
+
+@for
+The rule is written:
+
+    @for variable from expression to expression {
+        //...
+    }
+    
+OR
+
+    @for variable from expression through expression {
+        //...
+    }
+
+If to is used, the final number is excluded, if through is used, it's included.
+
+### @while
+Def: The @while rule, evaluated its block if its expression returns true. Then, if its expression still returns true, it evaluates its block again. This continues until the expression finally returns false.
+
+@while
+The rule is written:
+
+    @while expression{
+        //...
+    }
+
+Although @while is necessary for a few particularly complex stylesheets, you're usually better of using either @each or @for if either of them will work. They're clearer for the reader, and often faster to compile as well
