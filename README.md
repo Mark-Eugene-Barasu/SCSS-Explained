@@ -366,3 +366,85 @@ If a list contains a null, that null is omitted from the generated CSS.
 null is also falsey which means it counts as false for any rules of operators that take booleans. This makes it easy to use values that can be null as condition for @if and if()
 
 If a property value is null, that property is omitted entirely.
+
+## SCSS Operators 
+*Equality Operators
+*Relational Operators
+*Numeric Operators
+*String Operators
+*Boolean Operators
+
+### Equality Operators.
+Def: The equality operators return whether or not two values are the same. 
+
+Numbers:
+are equal if they have the same value and the same units, or if their values are equal when their units are converted between one another.
+
+    @debug 1px == 1px; // true
+    @debug 1px != 2px; // true
+
+String:
+are unusual in that unquoted and quoted strings with the same contents are considered equal.
+
+    @debug "Helvetica" == Helvetica; // true
+
+Colors:
+are equal if they have the same red, green, blue, and alpha values. 
+
+    @debug hsl(34, 35%, 92.1%) == #f2eced4; // true
+
+Lists:
+are equal if their contents are equal. Comma-separated list aren't equal to space-separated lists, and bracketed lists aren't equal to unbracketed lists.
+
+    @debug (5px 7px 10px) == (5px 7px 10px) // true
+
+Maps:
+are equal if their keys and values are both equal.
+
+    $theme: (
+        "venus": #998099,
+        "nebula": #d2e1dd
+    );
+
+true, false and null:
+are only equal to themselves.
+ 
+    @debug true == true; // true
+
+
+### Relational Operators
+Def:Relational operators determine whether numbers are larger or smaller than one another. They automatically convert between compatible units.
+
+    @debug 100 > 50; // true
+    @debug 10px < 17px; // true
+    @debug 96px >= 1in; // true
+    @debug 1000ms <= 1s; // true
+
+Numbers without units can be compared with any number. They're automatically converted to that number's unit.
+
+    @debug 100 > 50px; // true
+    @debug 10px < 17; // true
+
+### Numeric Operators
+Def: SCSS supports teh standard set of mathematical operators for numbers. They automatically convert between compatible units.
+
+    @debug 10s + 15s; // 25s
+    @debug 1in - 10px; // 0.8958333333in
+    @debug 5px * 3px; // 15px*px
+    @debug (12px/4px); // 3
+    @debug 1in % 9px; // 0.0625in
+
+### String Operators
+Def: SCSS supports a few operators that generate strings:
+
+    @debug "Helvetica " + "Neve"; // "Helvetica Neve"
+    @debug san- + sarif; // san-sarif
+    @debug #(10px + 5px)/ 30px; 15px/ 30px
+
+### Boolean Operators
+Def: Unlike languages like JavaScript, SCSS uses words rather than symbols for its boolean operators.
+
+    @debug not true; // false
+    @debug not false; // true
+    @debug true and true; // true
+    @debug true and false; // false
