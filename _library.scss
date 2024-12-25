@@ -3,6 +3,7 @@ $default-c: red !default;
 $border-radius: 10px !default;
 $box-shadow: 0 0.5rem 1rem rgba($default-c, 0.3) !default;
 
+
 .default {
     border: 1px solid $default-c;
     border-radius: $border-radius;
